@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{\textbf{Functional and Non-Functional Requirements}
+\vspace{10pt}
+\\\large \textbf{Project Title: SpendSmart}}
+\author{Prepared by: Aashin K S \& Avula Venumadhav}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Goal}
+SpendSmart is a secure, full-stack web application that empowers users to manage their personal finances by automatically importing bank transactions, categorizing expenses, setting budgets, tracking financial goals, and interacting with an AI-powered financial chatbot. The system integrates with banking APIs and offers real-time insights and personalized financial advice. Admins oversee user management and platform health to ensure system security, performance, and compliance.
+
+\section{Functional Requirements}
+\begin{itemize}
+    \item User registration and login with role-based access (User/Admin)
+    \item Secure bank account linking via external APIs (e.g., Plaid)
+    \item Automated transaction fetching and intelligent expense categorization
+    \item Budget planning module with customizable limits per category
+    \item Spending dashboard with charts, summaries, and monthly/yearly reports
+    \item Savings goal creation and progress tracking modules
+    \item AI-powered chatbot for financial advice using Ollama LLM
+    \item Email notifications (e.g., budget limit warning, goal achievements) using Nodemailer
+    \item Admin dashboard to monitor users, platform usage, and system activities
+    \item Role management (admin can promote, suspend, or delete users)
+    \item API Gateway management with Express Gateway for service routing, load balancing, and basic security policies
+\end{itemize}
+
+\section{Non-Functional Requirements}
+\begin{itemize}
+    \item Secure authentication using JWT tokens and OAuth for bank API access
+    \item Data encryption (both in transit via HTTPS and at rest using database encryption techniques)
+    \item Responsive and intuitive UI/UX optimized for web and mobile browsers
+    \item Scalable microservices backend (Node.js, Express.js) to handle growing transaction data and user load
+    \item Real-time synchronization with banking APIs for transaction updates
+    \item High availability and low-latency backend API responses
+    \item Fault tolerance and graceful error handling for API and system failures
+    \item Compliance with data privacy laws (e.g., GDPR, CCPA)
+    \item Audit trails and logging for security incidents and critical activities
+    \item Modular architecture for easier maintenance, upgrades, and feature expansion
+\end{itemize}
+
+\section{Pain Points for Users and Admins}
+\subsection*{Users:}
+\begin{itemize}
+    \item Difficulty tracking spending habits manually
+    \item Lack of insights into budgeting and savings opportunities
+    \item Inability to receive quick financial guidance when needed
+    \item Confusion managing multiple accounts and goals in one place
+\end{itemize}
+
+\subsection*{Admins:}
+\begin{itemize}
+    \item Maintaining security over sensitive financial data
+    \item Managing user accounts, suspicious activities, and transaction monitoring
+    \item Monitoring API call usage and system uptime
+    \item Ensuring legal compliance with evolving financial regulations
+\end{itemize}
+
+\section{How SpendSmart Solves These Problems}
+\begin{itemize}
+    \item Automatic bank transaction import and categorization for seamless tracking
+    \item Visual budgeting tools and real-time alerts to prevent overspending
+    \item AI-powered financial chatbot (using Ollama) offering instant guidance
+    \item Centralized dashboard combining expense reports, goal tracking, and financial health overview
+    \item Secure admin controls for better user and system management
+    \item Microservices and gateway setup ensures modular, scalable, and future-proof architecture
+\end{itemize}
+
+\end{document}

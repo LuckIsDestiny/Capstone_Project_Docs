@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\title{\textbf{Business Requirement Document (BRD)}
+\vspace{10pt}
+\\\large \textbf{Project Title: SpendSmart}}
+\author{Prepared by: Aashin K S \& Avula Venumadhav}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Overview}
+Managing personal finances can be difficult, especially for individuals who lack financial literacy or have impulsive spending habits.
+Traditional budgeting tools often require manual entry and offer limited guidance, leaving users overwhelmed.
+
+SpendSmart aims to automate personal finance management by integrating with global financial APIs to fetch real-time bank transaction data, help users track expenses, manage budgets, receive financial advice via an AI-powered chatbot, and stay informed with personalized alerts—all from a single intuitive platform.
+
+\section{Business Goals}
+\begin{itemize}
+    \item Enable users to link their bank accounts securely and automatically import transactions.
+    \item Automate expense tracking and categorize spending intelligently.
+    \item Provide personalized financial insights and budget alerts.
+    \item Help users set, monitor, and achieve their savings goals.
+    \item Ensure a scalable, secure, and user-friendly platform with microservices architecture.
+\end{itemize}
+
+\section{User Stories}
+\begin{itemize}
+    \item As a user, I want to securely link my bank account to automatically fetch my transactions.
+    \item As a user, I want my expenses to be automatically categorized to understand my spending.
+    \item As a user, I want to receive smart alerts when I'm close to exceeding my budget.
+    \item As a user, I want to create savings goals and track progress.
+    \item As a user, I want to view monthly and yearly spending summaries and financial health.
+    \item As a user, I want to interact with a chatbot for personalized financial advice.
+    \item As an admin, I want to manage user accounts, monitor platform usage, and ensure security.
+\end{itemize}
+
+\section{Solutions Provided by SpendSmart}
+\begin{itemize}
+    \item Bank Integration: Securely link and fetch bank transactions via APIs like Plaid.
+    \item Automatic Expense Categorization: Classify transactions by merchant, category, and pattern.
+    \item Smart Budget Planner: Define monthly/annual budgets, with real-time monitoring.
+    \item Goal Tracker: Set, edit, and monitor savings goals and track achievements.
+    \item AI-Driven Chatbot: Financial advice chatbot powered by Ollama LLM models.
+    \item Email Notifications: Important updates and alerts via Nodemailer.
+    \item Interactive Dashboard: Visual charts and summaries for income, expenses, goals, and trends.
+\end{itemize}
+
+\section{Tech Stack}
+\begin{itemize}
+    \item Backend: Node.js, Express.js
+    \item Frontend: Angular
+    \item Database: MongoDB (via Mongoose)
+    \item API Gateway: Express Gateway (for routing and API management)
+    \item Third-Party APIs:
+    \begin{itemize}
+        \item Plaid API (Bank linking and transactions)
+        \item Ollama LLM (Financial advice chatbot)
+    \end{itemize}
+    \item Email Service:
+    \begin{itemize}
+        \item Nodemailer (for sending email notifications)
+    \end{itemize}
+\end{itemize}
+
+\section{Key Milestones}
+\begin{enumerate}
+    \item Backend Setup: Node.js + Express.js services for Authentication, Bank Account Linking, Transaction Fetching and Categorization, Budget and Goal Management, Notification Services, AI Chatbot Microservice.
+    \item Frontend Setup: Angular development, UI component creation, User-friendly routing.
+    \item API Gateway Setup: Setup Express Gateway, Configure services, routes, and policies for security and load management.
+    \item Third-Party API Integration: Plaid, Ollama, Nodemailer integration.
+    \item UI/UX Designing: Responsive designs for Dashboard, Budget Tracker, Goal Management, Transaction Insights, and Chatbot Interface.
+    \item Frontend-Backend Integration: Connect Angular frontend to Node.js backend via Express Gateway.
+    \item Testing \& Deployment: Perform full-stack testing, optimize performance, and deploy to cloud (e.g., AWS).
+\end{enumerate}
+
+\section{Deliverables}
+\begin{itemize}
+    \item Full-stack responsive web application (MEAN stack)
+    \item Secure bank linking and transaction integration
+    \item Categorized transaction dashboard
+    \item Budget management and goal tracking modules
+    \item AI-powered financial chatbot
+    \item REST APIs with full documentation
+    \item Admin control panel (for user and system management)
+    \item Deployed application with user instructions
+    \item Data privacy and security compliance documentation
+\end{itemize}
+
+\end{document}

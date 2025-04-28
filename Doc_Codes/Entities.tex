@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{longtable}
+\geometry{margin=1in}
+\begin{document}
+
+\section*{Entities}
+
+\subsection*{1. User}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+userId & ObjectId \\ \hline
+name & string \\ \hline
+email & string \\ \hline
+passwordHash & string \\ \hline
+createdAt & timestamp \\ \hline
+updatedAt & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{2. Account}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+accountId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+plaidItemId & string \\ \hline
+plaidAccountId & string \\ \hline
+accountName & string \\ \hline
+officialName & string \\ \hline
+mask & string \\ \hline
+type & string (e.g., "depository") \\ \hline
+subtype & string (e.g., "checking") \\ \hline
+balancesAvailable & decimal \\ \hline
+balancesCurrent & decimal \\ \hline
+institutionId & string \\ \hline
+institutionName & string \\ \hline
+lastSync & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{3. Transaction}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+transactionId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+accountId & Reference to Account \\ \hline
+plaidTransactionId & string \\ \hline
+amount & decimal \\ \hline
+date & date \\ \hline
+authorizedDate & date \\ \hline
+merchantName & string \\ \hline
+merchantEntityId & string \\ \hline
+category & array of strings \\ \hline
+categoryId & string \\ \hline
+personalFinanceCategory & object (primary + detailed) \\ \hline
+paymentChannel & string \\ \hline
+pending & boolean \\ \hline
+location & object (address, city, region, postalCode, country, lat, lon) \\ \hline
+counterparties & array of objects (name, type, website, logo\_url) \\ \hline
+createdAt & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{4. Budget}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+budgetId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+category & string \\ \hline
+amount & decimal \\ \hline
+period & string (e.g., "monthly") \\ \hline
+startDate & date \\ \hline
+endDate & date \\ \hline
+createdAt & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{5. Goal}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+goalId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+title & string \\ \hline
+targetAmount & decimal \\ \hline
+currentAmount & decimal \\ \hline
+targetDate & date \\ \hline
+createdAt & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{6. Notification}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+notificationId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+type & string \\ \hline
+message & string \\ \hline
+read & boolean \\ \hline
+createdAt & timestamp \\ \hline
+\end{longtable}
+
+\subsection*{7. ChatMessage (Optional)}
+\begin{longtable}{|l|l|}
+\hline
+\textbf{Field} & \textbf{Type} \\ \hline
+messageId & ObjectId \\ \hline
+userId & Reference to User \\ \hline
+message & string \\ \hline
+role & string ("user" or "assistant") \\ \hline
+createdAt & timestamp \\ \hline
+\end{longtable}
+
+\end{document}
